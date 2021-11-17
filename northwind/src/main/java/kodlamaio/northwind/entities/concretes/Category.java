@@ -1,5 +1,6 @@
 package kodlamaio.northwind.entities.concretes;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -12,6 +13,7 @@ import java.util.List;
 @NoArgsConstructor
 @Table(name = "categories")
 @Entity
+@JsonIgnoreProperties({"hibernateLazyInitializer","handler","products"})//Benim sana söylediğim kadar mapping yap
 public class Category {
     @Id
     @Column(name="category_id")
